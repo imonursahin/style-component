@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Final</title>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Halant&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cantora+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
+
+    <script>
+        function getText(value) {
+            document.getElementById('sonuc').value = value;
+        }
+
+
+        function getCombo(selectObject) {
+            var value = selectObject.value;
+            document.getElementById('sonuc').style.fontFamily = value;
+        }
+
+        function changeFontSize(object) {
+            var value = object.value + "px";
+            document.getElementById('sonuc').style.fontSize = value;
+        }
+
+        function changeColor(value) {
+            document.getElementById('sonuc').style.color = value;
+        }
+
+        function changeBorderStyle(value) {
+            document.getElementById('sonuc').style.borderStyle = value;
+        }
+
+        function changeBorderWidth(value) {
+            document.getElementById('sonuc').style.borderWidth = value + "px";
+        }
+
+        function changeBorderColor(value) {
+            document.getElementById('sonuc').style.borderColor = value;
+        }
+
+        function changeBackgroundColor(value) {
+            document.getElementById('sonuc').style.backgroundColor = value;
+        }
+    </script>
+
+</head>
+<style>
+    #text {
+        resize: none;
+        width: 570px;
+        height: 100px;
+        font-size: 45;
+    }
+
+
+    .font1 {
+        font-family: 'Philosopher', sans-serif
+    }
+
+    .font2 {
+        font-family: 'Halant', serif
+    }
+
+    .font3 {
+        font-family: 'Cantora One', sans-serif
+    }
+
+    .font4 {
+        font-family: 'Sriracha', cursive
+    }
+
+    .font5 {
+        font-family: 'Nova Slim', cursive
+    }
+
+    #yazi_alani {
+        height: 150px;
+        width: 250px;
+        border: 1px solid black;
+        position: absolute;
+        background-color: lightsteelblue;
+        border-radius: 5px;
+        border-bottom: 4px solid black;
+
+
+    }
+
+    #yazi_alani:hover {
+        background-color: gold;
+    }
+
+    #font {
+
+        position: absolute;
+        left: 20px;
+        top: 40px;
+
+    }
+
+    #range {
+        position: absolute;
+        left: 20px;
+        top: 70px;
+
+    }
+
+    #renk {
+
+        position: absolute;
+        left: 20px;
+        top: 105px;
+    }
+
+    #arkaplan_alani {
+        height: 150px;
+        width: 300px;
+        border: 1px solid black;
+        position: absolute;
+        left: 280px;
+        background-color: lightsteelblue;
+        border-radius: 5px;
+        border-bottom: 4px solid black;
+
+    }
+
+    #arkaplan_alani:hover {
+        background-color: gold;
+    }
+
+    #border {
+
+        position: absolute;
+        left: 20px;
+        top: 40px;
+    }
+
+    #range2 {
+        position: absolute;
+        left: 20px;
+        top: 65px;
+
+    }
+
+    #border_renk {
+        position: absolute;
+        left: 20px;
+        top: 90px;
+
+    }
+
+    #arkaplan_renk {
+        position: absolute;
+        left: 20px;
+        top: 120px;
+
+    }
+
+    .sonuc1 {
+        resize: none;
+        width: 570px;
+        height: 250px;
+        position: absolute;
+        top: 320px;
+    }
+
+    .yazi_stili {
+
+        position: absolute;
+        left: 75px;
+        top: 10px;
+        font-size: large;
+        border: 1px solid darkgreen;
+        border-radius: 4px;
+        width: 120px;
+        text-align: center;
+        color: darkgreen;
+    }
+
+    .border_stili {
+
+        position: absolute;
+        left: 90px;
+        top: 10px;
+        font-size: large;
+        border: 1px solid darkgreen;
+        border-radius: 4px;
+        width: 150px;
+        text-align: center;
+        color: darkgreen;
+
+    }
+
+    #metin_alani {
+        margin-top: 163px;
+    }
+</style>
+
+<body>
+
+    <div class="metin_alani">
+        <label>Metin</label><br>
+        <textarea id="text" onkeyup="getText(this.value)"></textarea>
+    </div>
+
+
+    <div id="yazi_alani">
+        <label class="yazi_stili">Yazı Stili</label>
+        <div id="font">
+            <label>Yazı Fontu :</label>
+            <select onchange="getCombo(this)">
+                <option class="font1">Philosopher</option>
+                <option class="font2">Halant</option>
+                <option class="font3">Cantora One</option>
+                <option class="font4">Sriracha</option>
+                <option class="font5">Nova Slim</option>
+            </select>
+        </div>
+
+        <div id="range">
+            <label>Yazı Boyutu :</label>
+            <input type="range" min="0" max="75" onchange="changeFontSize(this)">
+        </div>
+
+        <div id="renk">
+            <label>Yazı Rengi :</label>
+            <input type="color" id="favcolor" name="favcolor" onchange="changeColor(this.value)">
+        </div>
+    </div>
+
+
+
+    <div id="arkaplan_alani">
+        <label class="border_stili">Border Ayarları</label>
+        <div id="border">
+            <label>Border Stili :</label>
+            <select onchange="changeBorderStyle(this.value)">
+                <option class="border2">Solid</option>
+                <option class="border1">Dotted</option>
+                <option class="border3">Inset</option>
+
+            </select>
+        </div>
+
+        <div id="range2">
+            <label>Border Kalınlığı :</label>
+            <input type="range" min="0" max="10" onchange="changeBorderWidth(this.value)">
+        </div>
+
+        <div id="border_renk">
+            <label>Border Rengi :</label>
+            <input type="color" id="favcolor" name="favcolor" onchange="changeBorderColor(this.value)">
+        </div>
+
+        <div id="arkaplan_renk">
+            <label>Arkaplan Rengi :</label>
+            <input type="color" id="favcolor" name="favcolor" onchange="changeBackgroundColor(this.value)">
+        </div>
+    </div>
+
+    <div id="metin_alani">
+            <label>Sonuç</label><br>
+            <textarea id="sonuc" class="sonuc1"></textarea>
+    </div>
+
+
+</body>
+
+</html>
